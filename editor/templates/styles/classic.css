@@ -1,0 +1,97 @@
+
+.teachdoctext{
+    width:100%;
+}
+.teachdoctext tr td{
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+.audioByLudi{
+    display: block;
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.bandeImg{
+    margin-top : 5px;
+    margin-bottom : 5px;
+    width : 100%;
+    display : block;
+    position : relative;
+}
+
+.videoByLudi{
+    margin:5px;
+}
+.teachdocbtn{
+    width : 100%;
+    text-align : center;
+}
+.teachdocbtn td{
+    width : 100%;
+    text-align : center;
+    padding : 10px;
+}
+
+.teachdocbtnteach td{
+    width : 100%;
+    text-align : center;
+    padding : 10px;
+}
+
+.teachdocplugteach{
+    position : relative;
+    width : 100%;
+}
+.teachdocplugteach td{
+    position : relative;
+    width : 100%;
+}
+.teachdocplugteach a{
+    display: none;
+}
+.plugteachcontain{
+    position : relative;
+    display: inline-block;
+    width : 99%;
+    margin : 0.5%;
+    min-height : 150px;
+    border : dotted 0px gray;
+}
+.plugteachuicontain{
+    position : relative;
+    display: inline-block;
+    width : 100%;
+    margin : 0px;
+    background-color: #E8DAEF;
+    padding : 7px;
+    min-height : 30px;
+    border : dotted 1px rgb(204, 26, 174);
+}
+
+.topinactiveteach{
+    position : absolute;
+    right : 0px;
+    top : 0px;
+    bottom : 10px;
+    left : 20px;
+    background-color: transparent;
+}
+
+
+
+
+.cell{
+    vertical-align: middle;
+}
+@media (max-width: 768px){
+    .cell{
+        min-width : 300px;
+        width : 100%;
+        display: table;
+        height : auto;
+        vertical-align : middle;
+    }
+}

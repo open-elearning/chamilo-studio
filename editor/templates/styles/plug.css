@@ -1,0 +1,297 @@
+
+.plugcard {
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    width : 300px;
+    height : 300px;
+    transform : translate(-50%, -50%);
+    transform-style : preserve-3d;
+    perspective : 600px;
+    transition : 0.5s;
+}
+.plugcard:focus .plugcard-front {
+    transform: rotateX(-180deg);
+}
+.plugcard:focus .plugcard-back {
+    transform: rotateX(0deg);
+}
+.plugcard-front {
+    height: 100%;
+    width: 100%;
+    cursor : pointer;
+    background-position : 50% 50%;
+    background-size : cover;
+    border : solid 1px gray;
+    border-radius : 4px;
+    position : absolute;
+    top : 0;
+    left : 0;
+    background-color : #b4b4b4;
+    backface-visibility : hidden;
+    transform : rotateX(0deg);
+    transition : 0.5s;
+}
+
+.plugcard-back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;left: 0;
+    background-color: #ffffff;
+    border : solid 1px gray;
+    border-radius: 4px;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    transition: 0.5s;
+    color: #252525;
+    text-align: center;
+}
+.plugcard-back h2 {
+    margin : 45% auto 35% auto!important;
+    font-size : 18px;
+    box-shadow : none;
+    background-color : transparent;
+    color : black;
+    text-align : center;
+    padding-left : 5px!important;
+    padding-right : 5px!important;
+}
+
+.forceplug300{
+    position : relative;
+    width:2px;
+    height:300px;
+}
+.avatar-minidia
+{
+    position : absolute;
+    left : 5px;
+    top : 5px;
+    width : 15%;
+    bottom : 5px;
+    background-position : center center;
+    background-size : contain;
+    background-repeat : no-repeat;
+    z-index : 10;
+}
+.dialog-minidia
+{
+    position : relative;
+    float : right;
+    right : 5px;
+    top : 5px;
+    width : 80%;
+    min-height : 150px;
+    z-index : 9;
+}
+
+.bubble-minidia
+{
+   text-align: left;
+   padding : 10px;
+   background : #ffffff;
+   border-radius : 4px;
+   border : #353535 solid 2px;
+}
+
+.bubble-minidia:after
+{
+    content : '';
+    position : absolute;
+    border-style : solid;
+    border-width : 15px 22px 15px 0;
+    border-color : transparent #ffffff;
+    display : block;
+    width : 0;
+    z-index : 1;
+    left : -22px;
+    top : 50%;
+    margin-top : -10px;
+}
+
+.bubble-minidia:before
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 16px 23px 16px 0;
+    border-color: transparent #353535;
+    display: block;
+    width: 0;
+    z-index: 0;
+    left: -25px;
+    top: 50%;
+    margin-top: -10px;
+}
+
+
+@media (max-width: 768px){
+    .avatar-minidia
+    {
+        position : absolute;
+        left : -10px;
+        top : -15px;
+        width : 60px;
+        height : 60px;
+        background-color : #ffffff;
+        background-size : cover;
+        background-position : center top;
+        border : #353535 solid 1px;
+        border-radius : 50%;
+    }
+    .dialog-minidia
+    {
+        position : relative;
+        padding-top : 15px;
+        padding-left : 5px;
+        padding-right : 5px;
+        padding-bottom : 5px;
+        float : right;
+        top : 15px;
+        width : 98%;
+        bottom : 3px;
+    }
+    .bubble-minidia:after
+    {
+        visibility: hidden;
+    }
+    .bubble-minidia:before
+    {
+        visibility: hidden;
+    }
+}
+.lifebarcontain{
+    text-align : center;
+}
+
+.onelifeopt{
+    position : relative;
+    display : inline-block;
+    width : 28px;
+    height : 28px;
+    z-index : 1;
+    background-image : url(img/classique/lifeeart.png);
+    background-repeat : no-repeat;
+    background-size : contain;
+}
+
+
+
+.oelcardinfo {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.6%;
+    background: #fff;
+    line-height: 1.4;
+    font-family: sans-serif;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 0;
+  }
+.oelcardinfo a {
+    color: inherit;
+}
+.oelcardinfo a:hover {
+    color: #5ad67d;
+}
+.oelcardinfo:hover .photo {
+    transform: scale(1.2) rotate(3deg);
+}
+.oelcardinfo .meta {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+}
+.oelcardinfo .photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s;
+    background-image: url(img/classique/oel-man-working.jpg);
+}
+
+.oelcardinfo .description {
+    padding: 1rem;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    text-align : left;
+}
+.oelcardinfo .description h1,
+.oelcardinfo .description h2 {
+    font-family: Poppins, sans-serif;
+}
+.oelcardinfo .oelcardinfoh1 {
+    line-height: 1;
+    margin: 0;
+    font-size: 1.7rem;
+}
+.oelcardinfo .oelcardinfoh2 {
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #a2a2a2;
+    margin-top: 5px;
+}
+  
+.oelcardinfo p {
+    position: relative;
+    margin: 1rem 0 0;
+}
+.oelcardinfo p:first-of-type {
+    margin-top: 1.25rem;
+}
+.oelcardinfo p:first-of-type:before {
+    content : "";
+    position : absolute;
+    height : 5px;
+    background-color : var(--main-color-1, #b3b3b3);
+    width : 35px;
+    top : -0.75rem;
+    border-radius : 3px;
+}
+.oelcardinfo:hover .details {
+    left: 0%;
+}
+@media (min-width: 640px) {
+    .oelcardinfo {
+        flex-direction: row;
+        max-width: 700px;
+    }
+    .oelcardinfo .meta {
+        flex-basis: 40%;
+        height: auto;
+    }
+    .oelcardinfo .description {
+        flex-basis: 60%;
+    }
+    .oelcardinfo .description:before {
+        transform: skewX(-3deg);
+        content: "";
+        background: #fff;
+        width: 30px;
+        position: absolute;
+        left: -10px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    .oelcardinfo.alt {
+        flex-direction: row-reverse;
+    }
+    .oelcardinfo.alt .description:before {
+        left: inherit;
+        right: -10px;
+        transform: skew(3deg);
+    }
+    .oelcardinfo.alt .details {
+        padding-left: 25px;
+    }
+}
