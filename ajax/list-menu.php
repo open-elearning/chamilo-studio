@@ -1,9 +1,9 @@
 <?php
 
 /*
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(E_ALL);
+    ini_set('display_errors',1);
+    ini_set('display_startup_errors',1);
+    error_reporting(E_ALL);
 */
 
 if(isset($_POST['id'])||isset($_GET['id'])){
@@ -27,7 +27,9 @@ if(isset($_POST['id'])||isset($_GET['id'])){
         $sql .= " WHERE id = $idPage;";
         
         $resultParts = Database::query($sql);
+
         while($Part=Database::fetch_array($resultParts)){
+
             $base_title = $Part['title'];
             $base_id_parent = $Part['id_parent'];
             $base_behavior = $Part['behavior'];
@@ -56,7 +58,7 @@ if(isset($_POST['id'])||isset($_GET['id'])){
         }else{
             echo "<li><span class='miniMenuLudi' behavior=$base_behavior id='labelMenuLudi$topPage'  onclick='loadSubLudi($topPage);' >$base_title</span>";
         }
-        echo '<span onclick="loadContextMenuSub('.$topPage.','.$indexPage.');" class="badge fa fa-cog"></span>';
+        echo '<span onclick="loadContextMenuSub('.$topPage.','.$indexPage.');" class="badge fa fa-pencil"></span>';
         echo '</li>';
         
         $sqlSubs = "SELECT title , id, behavior, type_node FROM plugin_oel_tools_teachdoc ";
@@ -65,6 +67,7 @@ if(isset($_POST['id'])||isset($_GET['id'])){
         $resultSubs = Database::query($sqlSubs);
 
         $indexPage = $indexPage +1;
+
         while($PartSub=Database::fetch_array($resultSubs)){
             
             $base_subtitle = $PartSub['title'];
@@ -87,19 +90,17 @@ if(isset($_POST['id'])||isset($_GET['id'])){
                 
             }
             
-            echo '<span onclick="loadContextMenuSub('.$id_subtitle.','.$indexPage.');" class="badge fa fa-cog"></span>';
+            echo '<span onclick="loadContextMenuSub('.$id_subtitle.','.$indexPage.');" class="badge fa fa-pencil"></span>';
             echo '</li>';
-
+            
             $indexPage = $indexPage +1;
-        
+            
         }
-
+        
         echo "<li onClick='displaySubPageEdit($topPage);' class=addli style='text-align:center;cursor:pointer;' >";
         echo "<img style='position:relative;left:50%;margin-left:-15px;' src='img/addScreengray.png' ></li>";
 
         echo '</ul>';
-
-
 
     }
 

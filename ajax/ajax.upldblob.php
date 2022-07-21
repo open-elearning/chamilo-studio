@@ -2,6 +2,7 @@
 
 require_once __DIR__.'/../../../main/inc/global.inc.php';   
 require_once '../0_dal/dal.save.php';
+require_once '../0_dal/dal.chamilo_object.php';
 require_once 'inc/functions.php';
 
 if(isset($_GET['step'])){
@@ -39,49 +40,33 @@ if(isset($_GET['step'])){
 
 } else {
 
+    $namefile = "imgblob_".uuid(6).".png";
+    $output_file = "../editor/img_cache/tmp/".$namefile;
     if(!file_exists("../editor/img_cache/tmp/")){
         mkdir("../editor/img_cache/tmp/", 0777,true);
     }
 
-    $namefile = "imgblob_".uuid(6).".png";
-    $pathfile = "../editor/img_cache/tmp/".$namefile;
+    if ( isset($_POST['file64']) ) {
+        $base64_string = (string)$_POST['file64'];
+        base64_to_jpeg($base64_string, $output_file);
 
-    if ( 0 < $_FILES['file']['error'] ) {
-        echo 'Error: ' . $_FILES['file']['error'] . '<br>';
-    } else {
-        move_uploaded_file($_FILES['file']['tmp_name'],$pathfile);
     }
 
-    if (file_exists($pathfile)) {
+    if (isset($_FILES['file'])) {
+        if ( 0 < $_FILES['file']['error'] ) {
+            echo 'Error: ' . $_FILES['file']['error'] . '<br>';
+        } else {
+            move_uploaded_file($_FILES['file']['tmp_name'],$output_file);
+        }
+    }
+
+    if (file_exists($output_file)) {
         echo $namefile;
     } else {
-        echo "KO";
+        echo "KO " . $output_file . "  (".$_FILES['file']['tmp_name']. ")";
     }
 
 }
-
-// if(isset($_POST['image64'])){
-
-//     $base64_string = $_POST['image64'];
-//     $output_file = '../editor/img_cache/hello.jpg';
-//     base64_to_jpeg($base64_string, $output_file);
-//     $picture = $request->files->get('picture');
-
-// }else{
-
-//     if(isset($_POST['image'])){
-
-//         $img_blob = $_POST['image'];
-    
-//         file_put_contents('../editor/img_cache/hello.png', $img_blob);
-    
-//     }else{
-    
-//         echo "no data";
-//     }    
-
-// }
-
 
 function base64_to_jpeg($base64_string, $output_file) {
 
