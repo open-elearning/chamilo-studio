@@ -9,7 +9,7 @@ $plugin_info = teachdoc_hub::create()->get_info();
 $plugin_info['title'] = 'Chamilo Studio Open eLearning Tools';
 $plugin_info['name'] = 'Chamilo Studio Open eLearning Tools';
 $plugin_info['comment'] = "OeL tools (z p_f)";
-$plugin_info['version'] = '1.1';
+$plugin_info['version'] = '1.11.16.x';
 $plugin_info['author'] = 'Bâtisseurs Numériques';
 
 $form = new FormValidator('form');
