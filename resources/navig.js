@@ -77,7 +77,5 @@ function checkObj(obj){
 
 }
 
-setTimeout(function(){correctPosition();},100);
+setTimeout(function(){correctPosition();applyThemeToColors();},100);
 setTimeout(function(){installEdit();},1000);
-
-

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Load ...</title>
+        <link rel="preload" as="image" href="img/classique/oel_back-low.jpg" />
+        <link href="css/scorm.css?v=10" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="jq.js?v=10"></script>
+        <script>
+            var pageBindex = 1;
+        </script>
+        <style>
+            body,html{
+                background-color: white!important;
+                height:100%;
+                margin:0;
+            }
+        </style>
+    </head>
+    <body class="neoload" style="background-color:white;" >
+        
+        <div class="fixed-top-nav-load"></div>
+        <!--MENU-->
+        <div class="vertical-line-load"></div>
+        <div class="vertical-line-load-2"></div>
+
+        <script>
+            $('.logotop-teachdoc').before("<div id='title-mainmenu' class='title-mainmenu' ><div class='title-mainmenu-core'>{titleplace}</div></div>")
+        </script>
+        
+        <script type="text/javascript" src="api.js"></script>
+        <script type="text/javascript" src="ng.js"></script>
+
+        <script>
+            
+            function loadLinkPage() {
+                var v = Math.floor(Math.random() * 2000);
+                window.location.href = "teachdoc-{start}.html#load=first#v="+v;
+            }
+
+            $('.logotop-teachdoc').after("<a id='btnlaunch-teachdoc' onClick='startCourse(0)' class='btnlaunch-teachdoc noselect' >&#9658;</a>")
+      
+            homeMenuIsOpen = true;
+
+        </script>
+
+        <style>
+            .fixed-top-nav {
+                display : none;
+            }
+        </style>
+        
+    </body>
+</html>
