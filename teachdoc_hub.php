@@ -35,6 +35,7 @@ class teachdoc_hub extends Plugin
             type_node INT,
             type_base INT,
             colors VARCHAR(25) NOT NULL,
+            quizztheme VARCHAR(25) NOT NULL,
             id_url INT,
             lp_id INT,
             behavior TINYINT NOT NULL DEFAULT '0',
@@ -45,7 +46,7 @@ class teachdoc_hub extends Plugin
             GpsComps TEXT NOT NULL,
             GpsStyle TEXT NOT NULL,
             recent_save TINYINT NOT NULL DEFAULT '0',
-            options VARCHAR(512) NOT NULL,
+            options VARCHAR(1080) NOT NULL,
             PRIMARY KEY (id));";
         Database::query($sql);
     }
