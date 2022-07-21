@@ -6,15 +6,15 @@ $parsedUrlpathLudi = $parsedUrlLudi['path'];
 //lp_controller.php
 $posCtr = strrpos($parsedUrlpathLudi,"lp_controller.php");
 $posGdr = strrpos($parsedUrlpathLudi,"lp_controller.php");
-$versionLudi = '2';
+$versionLudi = '3';
 $fhL = '';
 
 if($posCtr===false&&$posGdr===false){
     
 }else{
-
-    $user = api_get_user_info();	
     
+    $user = api_get_user_info();	
+
     if(isset($user['id'])){
         
         //$cidReq = isset($_GET['cidReq']) ? (string) $_GET['cidReq']:0;
